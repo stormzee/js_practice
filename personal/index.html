@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+  </head>
+  <body>
+    <div>
+      <h1>Course Link</h1>
+      <div id="countdown-container">
+        <p><span id="ready">Ready in</span></p>
+        <p><span id="countdown">10</span></p>
+        <a href="https://www.afrosyte.com" id="redirect-link">Get Link</a>
+      </div>
+      <script>
+        function countdown() {
+          var count = 10;
+          var countdownElement = document.getElementById("countdown");
+          var redirectLink = document.getElementById("redirect-link");
+          var ready_tag = document.getElementById("ready");
+          var intervalId = setInterval(function () {
+            count--;
+            countdownElement.textContent = count;
+            if (count === 0) {
+              clearInterval(intervalId);
+              countdownElement.style.display = "none";
+              ready_tag.textContent = "Click below";
+              redirectLink.style.display = "inline-block";
+            }
+          }, 1000);
+        }
+
+        countdown();
+      </script>
+    </div>
+  </body>
+</html>
